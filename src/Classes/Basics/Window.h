@@ -11,5 +11,7 @@ public:
     Window(const int &Width, const int &Height, const char* Title);
     ~Window();
 
+    int get_width() { return width; }
+    int get_height() { return height; }
     inline GLFWwindow* get() { return this->window; }
 };

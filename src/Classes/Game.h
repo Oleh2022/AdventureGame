@@ -7,14 +7,17 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Basics/Window.h"
+#include "Basics/Renderer.h"
+
 #include "Characters/Icon.h"
+#include "Characters/BackGround.h"
 
 class Game
 {
 private:
     Window* window_ptr;
     Icon icon;
-
+    Renderer renderer;
     glm::dvec2 cursor_pos;
 public:
     Game(Window &window_ptr);
