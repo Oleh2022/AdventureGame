@@ -5,7 +5,7 @@ VAO::VAO()
 	glGenVertexArrays(1, &ID);
 }
 
-void VAO::Bind()
+void VAO::Bind() const 
 {
 	glBindVertexArray(ID);
 }
@@ -16,7 +16,7 @@ void VAO::SetAttrib(unsigned int index, int size, int stride, const void* pointe
 	glVertexAttribPointer(index, size, GL_FLOAT, GL_FALSE, stride, pointer);
 }
 
-void VAO::UnBind()
+void VAO::UnBind() const
 {
 	glBindVertexArray(0);
 }

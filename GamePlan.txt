@@ -1,0 +1,25 @@
+1. Game menu
+- Play
+- Saves
+- Settings
+- Exit
+
+2. Map Generation
+- Generate map.png using 16x16 blocks
+
+3. Character
+- movement (Left click and move to mouse point)
+- health system
+
+4. Resources for building
+
+5. Build system
+- buil
+
+6. Save system
+- save map.png before closing the game
+- save game resources
+
+7. Create nps
+- movement
+- ai

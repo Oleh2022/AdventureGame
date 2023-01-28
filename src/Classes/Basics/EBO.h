@@ -9,7 +9,7 @@ public:
 	EBO();
 	~EBO();
 
-	void Bind();
+	void Bind()const;
 	void SetData(int size, unsigned int *data, GLenum usage);
-	void UnBind();
+	void UnBind() const;
 };

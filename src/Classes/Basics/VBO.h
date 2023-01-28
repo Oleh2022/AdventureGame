@@ -10,13 +10,12 @@ class VBO
 private:
 	std::vector<float> vertices;
 	unsigned int VertexBuffer;
-
 public:
 	VBO();
 	~VBO();
 
-	void SetVertices(const char* path);
-	void SetVertices(float *array, int capacity);
+	void SetVertices(const std::vector<float> &array);
+	std::vector<float>& GetVertices() { return this->vertices; }
 
 	void Bind();
 	void SetData(GLenum usage);

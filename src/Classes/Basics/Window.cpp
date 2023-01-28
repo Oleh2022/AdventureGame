@@ -15,6 +15,8 @@ Window::Window(const int &Width, const int &Height, const char* Title)
     }
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    this->width = Width;
+    this->height = Height;
 }
 
 Window::~Window()

@@ -29,31 +29,31 @@ void Texture2D::LoadTexture(const char* path, bool flip)
 
 void Texture2D::SetParameters()
 {
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 }
 
-void Texture2D::BindActivate(int TextureUnit)
+void Texture2D::BindActivate(int TextureUnit) const 
 {   
     glActiveTexture(GL_TEXTURE0 + TextureUnit);
     glBindTexture(GL_TEXTURE_2D, ID);
 }
 
-void Texture2D::Bind()
+void Texture2D::Bind() const 
 {
     glBindTexture(GL_TEXTURE_2D, ID);
 }
 
-void Texture2D::UnBind()
+void Texture2D::UnBind() const
 {
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 Texture2D::~Texture2D()
 {
-    // stbi_image_free(data);
+    stbi_image_free(data);
 }

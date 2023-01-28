@@ -11,7 +11,7 @@ public:
 	VAO();
 	~VAO();
 
-	void Bind();
+	void Bind() const;
 	void SetAttrib(unsigned int index, int size, int stride, const void* pointer);
-	void UnBind();
+	void UnBind() const;
 };

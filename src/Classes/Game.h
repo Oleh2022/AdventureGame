@@ -15,16 +15,14 @@
 class Game
 {
 private:
-    Window* window_ptr;
     Icon icon;
     Renderer renderer;
-    glm::dvec2 cursor_pos;
+
 public:
     Game(Window &window_ptr);
     ~Game();
-    void Render();
+    void GameLoop();
     void ProcessInput();
-    void SetupCharacters();
-    void AnimationLogic();
-    void GameLogic();
+    void EveryTick();
+    void DoOnce();
 };
